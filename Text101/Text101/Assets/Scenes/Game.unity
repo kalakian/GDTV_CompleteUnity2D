@@ -787,6 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 237369309}
+  startingState: {fileID: 11400000, guid: 23d2c2cab89362843afa5f4b0da4120e, type: 2}
 --- !u!1 &1852681359
 GameObject:
   m_ObjectHideFlags: 0
