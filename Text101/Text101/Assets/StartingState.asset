@@ -17,3 +17,6 @@ MonoBehaviour:
     way through. Or sneaking the long way to the emergency exit.\n\nWhat\r should
     I do?\n1. Take them head on - rush the 10 guards.\n2. Sneak my way\r to the emergency
     exit."
+  nextStates:
+  - {fileID: 11400000, guid: 9c51b88ff307d81479a52e7d7f9a8894, type: 2}
+  - {fileID: 11400000, guid: 48a431377a8f32f4f87b67a09abaa4b5, type: 2}
