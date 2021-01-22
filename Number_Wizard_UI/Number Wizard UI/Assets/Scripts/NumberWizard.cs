@@ -1,5 +1,7 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class NumberWizard : MonoBehaviour
 {
@@ -22,19 +24,19 @@ public class NumberWizard : MonoBehaviour
 
     public void OnPressHigher()
     {
-        min = guess + 1;
+        min = Math.Min(guess + 1, max);
         NextGuess();
     }
 
     public void OnPressLower()
     {
-        max = guess - 1;
+        max = Math.Max(guess - 1, min);
         NextGuess();
     }
 
     void NextGuess()
     {
-        guess = (max + min) / 2;
+        guess = Random.Range(min, max + 1);
         guessText.text = guess.ToString();
     }
 }
