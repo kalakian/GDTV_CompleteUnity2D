@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 83915241}
   - component: {fileID: 83915240}
   m_Layer: 5
-  m_Name: Wizard Rick
+  m_Name: Wizard Ben
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 411, y: 540.64}
-  m_SizeDelta: {x: 821.97766, y: 1081.2848}
+  m_AnchoredPosition: {x: 367.2, y: 498.3}
+  m_SizeDelta: {x: 734.41174, y: 996.5436}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83915240
 MonoBehaviour:
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 75195bad6f7eb824ca76c7f9dd693f82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0648a0bd913b86d48b372f9bcaf8f738, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 187490656}
   - component: {fileID: 187490655}
   m_Layer: 5
-  m_Name: Start Button
+  m_Name: Play Again Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,8 +220,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -348, y: -0.0000061989}
-  m_SizeDelta: {x: 330.95465, y: 123.45076}
+  m_AnchoredPosition: {x: -371, y: 0.000015259}
+  m_SizeDelta: {x: 381.9383, y: 168.76976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187490655
 MonoBehaviour:
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 664575684}
   - component: {fileID: 664575683}
   m_Layer: 5
-  m_Name: Start Text
+  m_Name: Play Again Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Play Again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ef0ad5aef412f054da95b00918b3b583, type: 2}
   m_sharedMaterial: {fileID: 21060062460783938, guid: ef0ad5aef412f054da95b00918b3b583,
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -571,12 +571,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 664575683}
-    characterCount: 5
+    characterCount: 10
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
