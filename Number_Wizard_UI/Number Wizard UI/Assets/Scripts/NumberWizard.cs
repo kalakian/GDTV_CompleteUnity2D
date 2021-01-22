@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class NumberWizard : MonoBehaviour
 {
     [SerializeField] int max;
     [SerializeField] int min;
+    [SerializeField] TextMeshProUGUI guessText;
+
     int guess;
     
     // Start is called before the first frame update
@@ -32,5 +35,6 @@ public class NumberWizard : MonoBehaviour
     void NextGuess()
     {
         guess = (max + min) / 2;
+        guessText.text = guess.ToString();
     }
 }

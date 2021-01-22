@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max: 1000
   min: 1
+  guessText: {fileID: 1938997188}
 --- !u!1 &81937982
 GameObject:
   m_ObjectHideFlags: 0
