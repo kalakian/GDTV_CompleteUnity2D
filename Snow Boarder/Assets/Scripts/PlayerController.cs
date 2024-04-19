@@ -12,13 +12,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow))
-        {
-            rb2d.AddTorque(torqueAmount);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rb2d.AddTorque(-torqueAmount);
-        }
+        float torqueValue = -Input.GetAxis("Horizontal") * torqueAmount;
+        rb2d.AddTorque(torqueValue);
     }
 }
