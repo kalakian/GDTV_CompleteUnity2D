@@ -15,29 +15,50 @@ public class Quiz : MonoBehaviour
     [SerializeField] Sprite defaultAnswerSprite;
     [SerializeField] Sprite correctAnswerSprite;
 
+    [Header("Timer")]
+    [SerializeField] float timeToCompleteQuestion = 30;
+    [SerializeField] float timeToShowCorrectAnswer = 10;
+    CountdownTimer timer;
+    bool isAnsweringQuestion;
+
     void Start()
     {
+        timer = FindObjectOfType<CountdownTimer>();
         GetNextQuestion();
+    }
+
+    void Update()
+    {
+        if(!timer.IsTimerRunning())
+        {
+            isAnsweringQuestion = !isAnsweringQuestion;
+
+            if(isAnsweringQuestion)
+            {
+                GetNextQuestion();
+            }
+            else
+            {
+                OnAnswerSelected(-1);
+            }
+        }
     }
 
     public void OnAnswerSelected(int index)
     {
-        Image buttonImage;
         int correctAnswerIndex = question.GetCorrectAnswerIndex();
 
         if (index == correctAnswerIndex)
         {
             questionText.text = "Correct!";
-            buttonImage = answerButtons[index].GetComponent<Image>();
-            buttonImage.sprite = correctAnswerSprite;
+            ShowCorrectAnswer();
         }
         else
         {
             questionText.text = "Incorrect! The correct answer was\n'"
                                 + question.GetAnswer(correctAnswerIndex)
                                 + "'";
-            buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
-            buttonImage.sprite = correctAnswerSprite;
+            ShowCorrectAnswer();
         }
 
         SetButtonState(false);
@@ -45,9 +66,12 @@ public class Quiz : MonoBehaviour
 
     void GetNextQuestion()
     {
-        SetButtonState(true);
-        SetDefaultButtonSprites();
         DisplayQuestion();
+        SetDefaultButtonSprites();
+        SetButtonState(true);
+        
+        isAnsweringQuestion = true;
+        timer.StartTimer(timeToCompleteQuestion);
     }
 
     void DisplayQuestion()
@@ -77,5 +101,15 @@ public class Quiz : MonoBehaviour
             Image buttonImage = answerButtons[i].GetComponent<Image>();
             buttonImage.sprite = defaultAnswerSprite;
         }
+    }
+
+    void ShowCorrectAnswer()
+    {
+        int correctAnswerIndex = question.GetCorrectAnswerIndex();
+        Image buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
+        buttonImage.sprite = correctAnswerSprite;
+
+        isAnsweringQuestion = false;
+        timer.StartTimer(timeToShowCorrectAnswer);
     }
 }
