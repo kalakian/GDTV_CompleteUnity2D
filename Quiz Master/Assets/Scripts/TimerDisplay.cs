@@ -5,7 +5,7 @@ public class TimerDisplay : MonoBehaviour
 {
     CountdownTimer timer;
 
-    void Start()
+    void Awake()
     {
         timer = FindObjectOfType<CountdownTimer>();
     }
