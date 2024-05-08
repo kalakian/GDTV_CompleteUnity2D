@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 5;
     [SerializeField] float jumpSpeed = 5;
     [SerializeField] float climbSpeed = 5;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform gunTransform;
 
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
@@ -49,6 +51,11 @@ public class PlayerMovement : MonoBehaviour
         {
             myRigidbody.velocity += new Vector2(0, jumpSpeed);
         }
+    }
+
+    void OnFire(InputValue value)
+    {
+        GameObject bullet = Instantiate<GameObject>(bulletPrefab, gunTransform.position, transform.rotation);
     }
 
     void Run()
