@@ -105,6 +105,8 @@ public class PlayerMovement : MonoBehaviour
             myFeetCollider.enabled = false;
             myAnimator.SetTrigger("Dying");
             myRigidbody.velocity += new Vector2(0, jumpSpeed);
+
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 }
