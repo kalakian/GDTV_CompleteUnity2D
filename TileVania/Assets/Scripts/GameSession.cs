@@ -58,6 +58,7 @@ public class GameSession : MonoBehaviour
         yield return new WaitForSecondsRealtime(deathDelay);
 
         SceneManager.LoadScene(0);
+        FindObjectOfType<ScenePersist>().ResetScenePersistence();
         Destroy(gameObject);
     }
 
