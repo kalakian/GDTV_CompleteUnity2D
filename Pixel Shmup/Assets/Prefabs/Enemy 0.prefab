@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7966774803423708327}
   - component: {fileID: -3988881709317987534}
   - component: {fileID: 7428576329364495296}
+  - component: {fileID: -1229031199854877224}
   m_Layer: 7
   m_Name: Enemy 0
   m_TagString: Enemy
@@ -112,6 +113,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
+--- !u!114 &-1229031199854877224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258293505967337853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3783bc0773108d4ba66a38793d68c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 9158870170923009029, guid: 8165ed3fd9e3a2c44bab65cad418470e, type: 3}
+  projectileSpeed: 8
+  projectileLifetime: 4
+  firingRate: 1
+  useAI: 1
+  firingRateVariance: 0.5
+  minimumFiringRate: 0.3
 --- !u!1 &8690240939154329118
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,12 +203,12 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1255680505
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1244231095, guid: ad557c6bf69f5ff4a85e2ec2daf64018, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
