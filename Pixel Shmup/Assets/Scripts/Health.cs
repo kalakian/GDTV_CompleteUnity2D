@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] int health = 50;
+    [SerializeField] int maxHealth = 50;
     [SerializeField] ParticleSystem hitEffect;
     [SerializeField] bool applyCameraShake;
     [SerializeField] int scoreForDestroying = 0;
@@ -13,9 +13,23 @@ public class Health : MonoBehaviour
     AudioPlayer audioPlayer;
     ScoreKeeper scoreKeeper;
 
-    public int GetHealth()
+    int remainingHealth;
+
+    public int GetRemainingHealth()
     {
-        return health;
+        return remainingHealth;
+    }
+
+    public float GetHealthFraction()
+    {
+        float fraction = 0;
+
+        if(remainingHealth > 0 && maxHealth > 0)
+        {
+            fraction = remainingHealth / (float)maxHealth;
+        }
+
+        return fraction;
     }
 
     void Awake()
@@ -23,6 +37,7 @@ public class Health : MonoBehaviour
         cameraShake = Camera.main.GetComponent<CameraShake>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        remainingHealth = maxHealth;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -39,8 +54,8 @@ public class Health : MonoBehaviour
 
     void TakeDamage(int damageTaken)
     {
-        health -= damageTaken;
-        if(health <= 0)
+        remainingHealth -= damageTaken;
+        if(remainingHealth <= 0)
         {
             Die();
         }

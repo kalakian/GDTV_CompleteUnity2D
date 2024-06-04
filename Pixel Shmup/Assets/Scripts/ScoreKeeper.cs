@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    [SerializeField] int score;
+    int score;
 
     public int GetScore()
     {
