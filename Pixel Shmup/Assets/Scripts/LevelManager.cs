@@ -10,6 +10,13 @@ public class LevelManager : MonoBehaviour
     const int gameSceneIndex = 1;
     const int gameOverSceneIndex = 2;
 
+    ScoreKeeper scoreKeeper;
+
+    void Awake()
+    {
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
+
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(mainMenuSceneIndex);
@@ -17,6 +24,10 @@ public class LevelManager : MonoBehaviour
 
     public void LoadGame()
     {
+        if (scoreKeeper)
+        {
+            scoreKeeper.ResetScore();
+        }
         SceneManager.LoadScene(gameSceneIndex);
     }
 
