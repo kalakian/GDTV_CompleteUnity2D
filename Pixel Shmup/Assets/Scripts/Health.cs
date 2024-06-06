@@ -12,8 +12,10 @@ public class Health : MonoBehaviour
     CameraShake cameraShake;
     AudioPlayer audioPlayer;
     ScoreKeeper scoreKeeper;
+    LevelManager levelManager;
 
     int remainingHealth;
+    bool isPlayer;
 
     public int GetRemainingHealth()
     {
@@ -38,6 +40,8 @@ public class Health : MonoBehaviour
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         remainingHealth = maxHealth;
+        levelManager = FindObjectOfType<LevelManager>();
+        isPlayer =  GetComponent<Player>() != null;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -66,6 +70,10 @@ public class Health : MonoBehaviour
         if (scoreKeeper)
         {
             scoreKeeper.AddToScore(scoreForDestroying);
+        }
+        if(isPlayer)
+        {
+            levelManager.LoadGameOver();
         }
         Destroy(gameObject);
     }
